@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>???????</title>
+    <meta name="description" content="somewhere in the Hedge...">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+
+    <!-- If you remix this you owe me a soda irl -->
+    <!-- https://github.com/feiss/aframe-environment-component/ is how I did the environment part -->
+    <!-- I borrowed the stump from Poly! https://poly.google.com/view/esFOngb0uwl -->
+  
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="tree_obj" src="Axe_OBJ.obj"></a-asset-item>
+        <a-asset-item id="tree_mtl" src="Axe_OBJ.mtl"></a-asset-item>
+        <a-asset-item id="stump" src="treeStump.gltf"></a-asset-item>
+      </a-assets>
+  
+      <a-entity environment="preset: forest; ground: none; dressingAmount: 500; dressingScale: 10; dressingUniformScale: false; dressingColor: #6631D0; skyType: color; skyColor: #440077"></a-entity>
+      
+      <a-sky src="https://66.media.tumblr.com/5ff3e945a40fd3c4862175900bad7fbf/tumblr_pbf7q2G0E91wcookgo6_1280.jpg"></a-sky>
+       
+      <a-gltf-model rotation = "0 90 0" scale="0.3 0.1 0.3" position=".774 0 20" src="#stump" ></a-gltf-model>
+      <a-obj-model rotation = "-60 -120 30" scale="3.5 3.5 3.5" position="0.15 .65 20" src="#tree_obj" side="back" color="#222222"></a-obj-model>
+
+      <a-entity rotation = "-20 90 0"  position="0 0 20" geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0.001; height: 1.5" material="color: black"></a-entity>
+      <a-entity rotation = "15 90 0" position="1.5 0 20" geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0.001; height: 10" material="color: black"></a-entity>
+      
+      <a-entity rotation = "-45 90 0"  position="0 0 19.5" geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0.001; height: 5" material="color: black"></a-entity>
+      <a-entity rotation = "45 90 0" position="1.5 0 20" geometry="primitive: cone; radiusBottom: 1; radiusTop: 0.001; height: 5" material="color: black"></a-entity>
+      
+      <a-entity rotation = "-60 90 0"  position="0 0 19.25" geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0.001; height: 10" material="color: black"></a-entity>
+      <a-entity rotation = "63 90 0" position="1.5 0 19.25"  geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0.001; height: 1.5" material="color: black"></a-entity>
+      
+      <a-torus-knot src="https://66.media.tumblr.com/1816dd54ce215a14dfaac6af1e5f68bf/tumblr_p6kwceuLft1rpkbqqo8_540.png" position="2 4.5 -8" z arc="100" p="-1" q="70" radius="20" radius-tubular="1">
+        <a-animation attribute="rotation" dur="10000" repeat="indefinite" easing="linear"
+                       from= "0 0 0" to="0 0 360" begin="1"></a-animation>
+      </a-torus-knot>
+      <a-torus-knot src="https://66.media.tumblr.com/1816dd54ce215a14dfaac6af1e5f68bf/tumblr_p6kwceuLft1rpkbqqo8_540.png" position="2 4.5 8" z arc="100" p="-1" q="70" radius="20" radius-tubular="1">
+        <a-animation attribute="rotation" dur="10000" repeat="indefinite" easing="linear"
+                       from= "0 0 0" to="0 0 -360" begin="1"></a-animation>
+      </a-torus-knot>
+      <!--a-cone src="https://i.imgur.com/mYmmbrp.jpg" height="2" radius-top="0.1" position="0 1 -6"></a-cone-->
+
+      <a-plane src="https://cdn.glitch.com/88bcbbdb-4761-4aef-97bd-a0d47a6cac3f%2Forig.jpg?1543091996673" rotation="-90 0 0" height="100" width="100" metalness="0.3"></a-plane>
+      
+      <a-light type="ambient" color="#5454D1">
+        <a-animation attribute="intensity" from="1" to="3" dur="5000" easing="linear" direction="alternate" repeat="indefinite"></a-animation>
+      </a-light>
+    </a-scene>
+  </body>
+</html>
